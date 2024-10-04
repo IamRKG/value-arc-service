@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import Logo from './Logo';
 
 const Header: React.FC = () => {
@@ -14,6 +15,29 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navItems = ['Home', 'Services', 'Portfolio', 'Value Arc', 'About', 'Contact'];
+
+  const renderNavItems = (isMobile: boolean = false) => (
+    navItems.map((item) => (
+      <motion.li
+        key={item}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className={isMobile ? "px-4 py-2" : ""}
+      >
+        <Link
+          href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
+          className={`text-lg font-semibold ${
+            isScrolled ? 'text-white' : 'text-white'
+          } hover:text-amber-500 transition-colors duration-300`}
+          onClick={isMobile ? () => setIsMenuOpen(false) : undefined}
+        >
+          {item}
+        </Link>
+      </motion.li>
+    ))
+  );
 
   return (
     <motion.header
@@ -35,18 +59,7 @@ const Header: React.FC = () => {
         </motion.div>
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
-            {['Home', 'Services', 'Portfolio', 'About', 'Contact'].map((item) => (
-              <motion.li key={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href={`#${item.toLowerCase()}`}
-                  className={`text-lg font-semibold ${
-                    isScrolled ? 'text-white' : 'text-white'
-                  } hover:text-amber-500 transition-colors duration-300`}
-                >
-                  {item}
-                </a>
-              </motion.li>
-            ))}
+            {renderNavItems()}
           </ul>
         </nav>
         <motion.button
@@ -68,24 +81,7 @@ const Header: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             <ul className="py-4">
-              {['Home', 'Services', 'Portfolio', 'About', 'Contact'].map((item) => (
-                <motion.li
-                  key={item}
-                  className="px-4 py-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-lg font-semibold text-white hover:text-amber-500 transition-colors duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item}
-                  </a>
-                </motion.li>
-              ))}
+              {renderNavItems(true)}
             </ul>
           </motion.nav>
         )}
