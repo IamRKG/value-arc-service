@@ -65,7 +65,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
-              <p className="text-gray-600 mb-4">"{testimonial.quote}"</p>
+              <p className="text-gray-600 mb-4">&quot;{testimonial.quote}&quot;</p>
               <StarRating rating={testimonial.rating} />
               <p className="font-semibold text-navy mt-2">{testimonial.author}</p>
               <p className="text-sm text-gray-500">{testimonial.company}</p>

@@ -1,3 +1,5 @@
+[![Vercel](https://vercelbadge.vercel.app/api/your-username/your-repo-name)](https://vercel.com/your-username/your-repo-name/deployments)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
