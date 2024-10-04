@@ -5,6 +5,12 @@ import Image from 'next/image';
 import AnimatedText from '@/components/AnimatedText';
 import AnimatedServiceCard from '@/components/AnimatedServiceCard';
 
+interface Service {
+  title: string;
+  description: string;
+  imageSrc: string;
+}
+
 const services = [
   {
     title: "Embroidery Digitizing",
@@ -39,7 +45,7 @@ const services = [
 ];
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState(null) as any;
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-navy to-blue-800 text-white">
