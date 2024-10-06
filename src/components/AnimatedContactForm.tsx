@@ -42,14 +42,12 @@ export default function AnimatedContactForm() {
       </div>
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full px-3">
-          <motion.button
-            className="bg-orange hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-            type="button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
+            type="submit"
+            className="w-full bg-amber-400 text-navy font-bold py-2 px-4 rounded hover:bg-amber-500 transition duration-300"
           >
             Send Message
-          </motion.button>
+          </button>
         </div>
       </div>
     </motion.form>

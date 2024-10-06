@@ -13,7 +13,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0B1930;
     --foreground: #ededed;
   }
 }
@@ -28,4 +28,17 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-out forwards;
 }
