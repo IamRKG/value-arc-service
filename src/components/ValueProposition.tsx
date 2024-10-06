@@ -1,15 +1,14 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaRocket, FaPaintBrush, FaCog } from 'react-icons/fa';
 
 const ValueProposition: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.2]);
-
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
@@ -25,8 +24,9 @@ const ValueProposition: React.FC = () => {
         <Image
           src="/images/eagle.png"
           alt="Embroidery Showcase"
-          layout="fill"
-          objectFit="cover"
+          fill
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
           className="opacity-10"
         />
       </motion.div>

@@ -51,13 +51,16 @@ export default function Services() {
     <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-navy to-blue-800 text-white">
       {/* Improved Hero Section */}
       <section className="w-full min-h-screen flex items-center justify-center relative overflow-hidden">
-        <Image
-          src="/images/services/hero-background.jpg"
-          alt="Embroidery background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-20"
-        />
+      <Image
+  src="/images/services/hero-background.jpg"
+  alt="Embroidery background"
+  fill
+  sizes="100vw"
+  style={{ objectFit: 'cover' }}
+  className="opacity-20"
+/>
+
+
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-3xl">
             <motion.h1
