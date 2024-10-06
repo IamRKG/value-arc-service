@@ -2,13 +2,21 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import Masonry from 'react-masonry-css';
 import { FaFilter } from 'react-icons/fa';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import { useParallax } from 'react-scroll-parallax';
+import { ReactTyped } from "react-typed";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import { Engine } from "tsparticles-engine";
 
+const particlesInit = async (engine: Engine) => {
+  await loadSlim(engine);
+};
 const portfolioItems = [
   {
     title: "Corporate Logo",
@@ -55,6 +63,21 @@ export default function Portfolio() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
   const [visibleItems, setVisibleItems] = useState(6);
+  const { ref } = useParallax<HTMLDivElement>({ speed: -20 });
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 800], [1, 0]);
+
+  
+
+  const particlesOptions = {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#ffffff" },
+      opacity: { value: 0.5, random: false },
+      size: { value: 3, random: true },
+      move: { enable: true, speed: 1, direction: "none" as const, random: false, straight: false, out_mode: "out" as const }
+    }
+  };
 
   const filteredItems = portfolioItems.filter(item => 
     (filter === 'All' || item.category === filter) &&
@@ -64,14 +87,8 @@ export default function Portfolio() {
 
   return (
     <>
-
-      <section className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
+      <motion.section style={{ opacity }} className="relative h-screen overflow-hidden">
+        <div ref={ref} className="absolute inset-0">
           <Image
             src="/images/hero-portfolio.jpg"
             alt="Portfolio Hero Image"
@@ -80,26 +97,68 @@ export default function Portfolio() {
             quality={100}
             priority
           />
-        </motion.div>
+        </div>
+        <Particles id="tsparticles" init={particlesInit} options={particlesOptions} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 flex flex-col items-center justify-center">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center tracking-tight mb-4"
+            className="text-center"
           >
-            Our Portfolio
-          </motion.h1>
-          <p className="text-lg sm:text-xl text-white text-center mb-8 max-w-2xl px-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-4">
+              <span className="typed-text">
+                <ReactTyped
+                  strings={['Our Portfolio', 'Creative Designs', 'Innovative Solutions']}
+                  typeSpeed={40}
+                  backSpeed={50}
+                  loop
+                />
+              </span>
+            </h1>
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 1, delay: 1 }}
+              className="h-1 bg-amber-500 mx-auto mb-8"
+              style={{ maxWidth: '200px' }}
+            />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg sm:text-xl text-white text-center mb-8 max-w-2xl px-4"
+          >
             Discover our stunning collection of embroidery designs and custom artwork
-          </p>
-          <button className="bg-navy text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-amber-500 transition-colors">
-            Explore Our Work
-          </button>
+          </motion.p>
+          <motion.button
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(255,255,255)" }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-navy text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 relative overflow-hidden group"
+          >
+            <span className="relative z-10">Explore Our Work</span>
+            <motion.div
+              className="absolute inset-0 bg-amber-500"
+              initial={{ x: '-100%' }}
+              whileHover={{ x: 0 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.button>
         </div>
-      </section>
+        <motion.div
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 1, y: 10 }}
+          transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <svg className="w-6 h-6 text-white animate-bounce" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </motion.div>
+      </motion.section>
 
-      <main className="flex flex-col items-center justify-center py-16 bg-gray-50 bg-opacity-50 bg-[url('/images/subtle-pattern.png')]">
+      <main className="flex flex-col items-center justify-center py-16 bg-gray-50 bg-opacity-50 bg-[url('/images/subtle-pattern.webp')]">
         <div className="container mx-auto px-4">
           <div className="mb-12 w-full max-w-xl mx-auto px-4">
             <Input
@@ -147,7 +206,6 @@ export default function Portfolio() {
                   className="mb-4 group"
                 >
                   <Zoom
- 
                     zoomMargin={40}
                     zoomImg={{
                       src: item.imageSrc,
