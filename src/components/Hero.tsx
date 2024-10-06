@@ -37,7 +37,13 @@ export default function Hero() {
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 1.5 }}
         >
-          <Image src={images[currentImage]} alt={`Embroidery sample ${currentImage + 1}`} layout="fill" objectFit="cover" />
+                  <Image 
+                    src={images[currentImage]} 
+                    alt={`Embroidery sample ${currentImage + 1}`} 
+                    fill
+                    sizes="100vw"
+                    style={{ objectFit: 'cover' }}
+                  />
         </motion.div>
       </AnimatePresence>
       <motion.div 

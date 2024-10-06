@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AnimatedText from './AnimatedText';
 import CountUp from 'react-countup';
+import AnimatedText from './AnimatedText';
 
-const ResultsShowcase: React.FC = () => {
+interface ResultsShowcaseProps {
+  'data-new-gr-c-s-check-loaded'?: string;
+  'data-gr-ext-installed'?: string;
+}
+
+const ResultsShowcase: React.FC<ResultsShowcaseProps> = (props) => {
   const impactData = [
     { number: 5000, label: 'Designs Digitized', suffix: '+' },
     { number: 98, label: 'Client Satisfaction', suffix: '%' },
@@ -11,7 +16,7 @@ const ResultsShowcase: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-gray-100 py-16" {...props}>
       <div className="container mx-auto px-4">
         <AnimatedText className="text-3xl font-serif font-bold text-center mb-12 text-navy">
           Our Impact in Numbers
