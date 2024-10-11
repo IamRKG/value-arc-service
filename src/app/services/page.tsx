@@ -14,7 +14,7 @@ interface Service {
 const services = [
   {
     title: "Embroidery Digitizing",
-    description: "Transform your designs into high-quality, stitch-ready files for embroidery machines.",
+    description: "Expert digitizing for complex techniques like 3D puff, appliqué, and sequin embroidery.",
     imageSrc: "/images/services/embroidery-digitizing.jpg"
   },
   {
@@ -28,8 +28,8 @@ const services = [
     imageSrc: "/images/services/artwork-restoration.jpg"
   },
   {
-    title: "Specialty Digitizing",
-    description: "Expert digitizing for complex techniques like 3D puff, appliqué, and sequin embroidery.",
+    title: "Image Optimization",
+    description: "Image optimization reduces file size, enhances quality, and improves website speed and performance.",
     imageSrc: "/images/services/specialty-digitizing.jpg"
   },
   {
@@ -69,7 +69,7 @@ export default function Services() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-7xl font-serif font-bold text-amber-500 mb-6"
             >
-              Embroidery Excellence
+              Artwork, Embroidery & Image Optimization Excellence
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 50 }}

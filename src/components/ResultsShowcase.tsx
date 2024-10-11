@@ -1,42 +1,73 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import AnimatedText from './AnimatedText';
-import { FaPencilRuler, FaSmile, FaUsers } from 'react-icons/fa';
+import { FaPencilRuler, FaSmile, FaUsers} from 'react-icons/fa';
 
-interface ResultsShowcaseProps {
-  'data-new-gr-c-s-check-loaded'?: string;
-  'data-gr-ext-installed'?: string;
-}
+const impactData = [
+  { number: 1000, label: 'Designs Digitized', suffix: '+', icon: FaPencilRuler },
+  { number: 98, label: 'Client Satisfaction', suffix: '%', icon: FaSmile },
+  { number: 100, label: 'Happy Customers', suffix: '+', icon: FaUsers },
+];
 
-const ResultsShowcase: React.FC<ResultsShowcaseProps> = (props) => {
-  const impactData = [
-    { number: 5000, label: 'Designs Digitized', suffix: '+', icon: FaPencilRuler },
-    { number: 98, label: 'Client Satisfaction', suffix: '%', icon: FaSmile },
-    { number: 1000, label: 'Happy Customers', suffix: '+', icon: FaUsers },
-  ];
+const ResultsShowcase: React.FC = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
 
   return (
-    <section className="bg-gradient-to-b from-navy to-navy-light py-20" {...props}>
+    <section className="bg-gradient-to-b from-navy via-navy-light to-navy py-20" ref={ref}>
       <div className="container mx-auto px-4">
-        <AnimatedText className="text-4xl font-bold text-center mb-16 text-amber-500">
+        <AnimatedText className="text-5xl font-bold text-center mb-16 text-amber-500">
           Our Impact in Numbers
         </AnimatedText>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
           {impactData.map((item, index) => (
             <motion.div
               key={index}
-              className="text-center bg-navy-light p-8 rounded-xl shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: 1.05 }}
+              className="text-center bg-navy-light p-8 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+              variants={itemVariants}
             >
               <motion.div
                 className="text-amber-500 text-5xl mb-6 flex justify-center items-center"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: index * 0.2 + 0.3, type: 'spring', stiffness: 260, damping: 20 }}
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ duration: 0.5 }}
               >
                 <item.icon />
               </motion.div>
@@ -49,7 +80,7 @@ const ResultsShowcase: React.FC<ResultsShowcaseProps> = (props) => {
               <p className="text-xl text-amber-500 font-semibold">{item.label}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

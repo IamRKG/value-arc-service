@@ -21,39 +21,89 @@ const portfolioItems = [
   {
     title: "Corporate Logo",
     category: "Embroidery Digitizing",
-    imageSrc: "/images/portfolio/corporate-logo.jpg",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_3.jpg",
     description: "Precision digitizing of a complex corporate logo for uniform embroidery."
   },
   {
     title: "Custom Patch",
     category: "Custom Artwork",
-    imageSrc: "/images/portfolio/custom-patch.jpg",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_4.jpg",
     description: "Original artwork creation for a motorcycle club patch."
   },
   {
     title: "Sports Emblem",
     category: "Embroidery Digitizing",
-    imageSrc: "/images/portfolio/sports-emblem.jpg",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_5.jpg",
     description: "Digitized version of a local sports team emblem for jersey application."
   },
   {
     title: "Wedding Monogram",
-    category: "Custom Artwork & Digitizing",
-    imageSrc: "/images/portfolio/wedding-monogram.jpg",
+    category: "Image  Optimization",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_6.jpg",
     description: "Custom designed and digitized monogram for wedding favors."
   },
   {
     title: "Vintage Logo",
-    category: "Artwork Restoration & Digitizing",
-    imageSrc: "/images/portfolio/vintage-logo.jpg",
+    category: "Sublimation & Uniform Builder",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_7.jpg",
     description: "Restored and digitized a vintage company logo for modern use."
   },
   {
     title: "3D Puff Design",
     category: "Specialty Digitizing",
-    imageSrc: "/images/portfolio/3d-puff-design.jpg",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_8.jpg",
     description: "Digitized design optimized for 3D puff embroidery technique."
   }
+  ,{
+    title: "3D Puff Design",
+    category: "Specialty Digitizing",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_8.jpg",
+    description: "Digitized design optimized for 3D puff embroidery technique."
+  },
+  {
+    title: "Floral Pattern",
+    category: "Custom Artwork",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_9.jpg",
+    description: "Intricate floral pattern design for textile printing."
+  },
+  {
+    title: "Mascot Logo",
+    category: "Embroidery Digitizing",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_10.jpg",
+    description: "Digitized mascot logo for school sports team uniforms."
+  },
+  {
+    title: "Metallic Thread Design",
+    category: "Specialty Digitizing",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_11.jpg",
+    description: "Luxurious design optimized for metallic thread embroidery."
+  },
+  {
+    title: "Appliqué Technique",
+    category: "Embroidery Digitizing",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_12.jpg",
+    description: "Complex appliqué design for jacket back embellishment."
+  },
+ 
+  {
+    title: "Sequin Design",
+    category: "Specialty Digitizing",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_15.jpg",
+    description: "Digitized design for sequin embroidery on fashion items."
+  },
+  {
+    title: "Nature-inspired Emblem",
+    category: "Custom Artwork",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_16.jpg",
+    description: "Custom-designed nature-themed emblem for outdoor gear brand."
+  },
+  {
+    title: "Textured Logo",
+    category: "Embroidery Digitizing",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_17.jpg",
+    description: "Digitized logo with multiple texture techniques for unique feel."
+  },
+ 
 ];
 
 const categories = ['All', ...Array.from(new Set(portfolioItems.map(item => item.category)))];
