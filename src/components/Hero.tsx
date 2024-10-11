@@ -59,7 +59,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Expert Embroidery Digitizing & Artwork Services
+            Expert Artwork, Embroidery & Image Optimization Services
           </motion.h1>
           <motion.p 
             className="text-xl mb-10 text-white"

@@ -33,7 +33,7 @@ export default function Home() {
             <AnimatedServiceCard 
               title="Embroidery Digitizing" 
               description="Convert your artwork into high-quality embroidery files for any machine."
-              imageSrc="/images/embroidery-digitizing.jpg"
+              imageSrc="/images/embroidery-digitizing.webp"
             />
             <AnimatedServiceCard 
               title="Custom Artwork Design" 

@@ -13,11 +13,15 @@ const AboutPage: React.FC = () => {
   ]
 
   const commitmentPoints = [
-    'Delivering high-quality embroidery consistently',
-    'Staying at the forefront of embroidery technology',
+    'No Charge up to five design will be tested',
+    'Flexible pricing and next business day delivery',
+    'No revision fees, no hidden charges',
+    '24/7 customer support, 365 days a year',
+    'Delivering high-quality artwork, embroidery consistently',
+    'Staying at the forefront of artwork, embroidery technology',
     'Providing personalized designs for each client',
     'Maintaining open communication throughout projects',
-    'Continuously improving our embroidery techniques',
+    'Continuously improving our artwork, embroidery techniques',
   ]
 
   return (
@@ -43,7 +47,7 @@ const AboutPage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <AnimatedText className="text-6xl font-bold mb-6">
-              Embroidery Excellence
+            Artwork, Embroidery & Image Optimization Excellence
             </AnimatedText>
           </motion.div>
           <motion.h2 
@@ -60,7 +64,7 @@ const AboutPage: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            Discover how our expert embroidery digitizing and artwork services can elevate your brand.
+            Discover how our expert embroidery digitizing, image optimization and artwork services can elevate your brand.
           </motion.p>
           <motion.button
             className="bg-amber-500 text-navy font-bold py-3 px-8 rounded-full text-lg hover:bg-amber-600 transition duration-300"
@@ -87,7 +91,7 @@ const AboutPage: React.FC = () => {
       >
         <div className="container mx-auto px-4">
           <AnimatedText className="text-4xl md:text-5xl font-bold mb-12 text-center text-amber-400">
-            About Our Embroidery Services
+            About Our Services
           </AnimatedText>
           
           <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
