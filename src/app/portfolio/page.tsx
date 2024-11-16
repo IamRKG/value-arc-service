@@ -151,11 +151,7 @@ export default function Portfolio() {
     // Add small delay to ensure smooth transition
     await new Promise(resolve => setTimeout(resolve, 300));
     
-    const newFilteredItems = portfolioItems.filter(item => 
-      (category === 'All' || item.category === category) &&
-      (item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-       item.description.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
+ 
     
     setIsLoading(false);
   };
