@@ -42,7 +42,7 @@ const ValueProposition: React.FC = () => {
               className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight text-white"
               style={{ opacity }}
             >
-              Elevate Your Brand with Expert Embroidery Solutions
+              Elevate Your Brand with Expert Artwork & Embroidery Solutions
             </motion.h2>
             <motion.p 
               className="text-lg md:text-xl mb-12 leading-relaxed text-gray-200"
@@ -67,7 +67,7 @@ const ValueProposition: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <motion.a
-                href="#services"
+                href="services"
                 className="inline-block px-8 py-4 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors text-lg font-semibold text-center shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -75,7 +75,7 @@ const ValueProposition: React.FC = () => {
                 Explore Our Services
               </motion.a>
               <motion.a
-                href="#portfolio"
+                href="portfolio"
                 className="inline-block px-8 py-4 bg-white text-navy rounded-full hover:bg-gray-100 transition-colors text-lg font-semibold text-center shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
