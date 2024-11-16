@@ -26,7 +26,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               {['Embroidery Digitizing', 'Custom Artwork', 'File Conversion', 'Design Editing'].map((service) => (
                 <motion.li key={service} whileHover={{ x: 5 }}>
-                  <Link href={`/services/${service.toLowerCase().replace(' ', '-')}`} className="hover:text-amber-500 transition duration-300">
+                  <Link href={`/services`} className="hover:text-amber-500 transition duration-300">
                     {service}
                   </Link>
                 </motion.li>
@@ -40,7 +40,7 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              {['About', 'Portfolio', 'Testimonials', 'Contact'].map((item) => (
+              {['About', 'Portfolio', 'Services', 'Contact'].map((item) => (
                 <motion.li key={item} whileHover={{ x: 5 }}>
                   <Link href={`/${item.toLowerCase()}`} className="hover:text-amber-500 transition duration-300">
                     {item}

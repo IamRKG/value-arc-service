@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import AnimatedText from '@/components/AnimatedText';
 import AnimatedServiceCard from '@/components/AnimatedServiceCard';
+import Link from 'next/link';
 
 interface Service {
   title: string;
@@ -18,7 +19,7 @@ const services = [
     imageSrc: "/images/services/embroidery-digitizing.jpg"
   },
   {
-    title: "Custom Artwork",
+    title: "Artwork Services",
     description: "Create unique, eye-catching designs tailored to your specific needs and brand identity.",
     imageSrc: "/images/services/custom-artwork.jpg"
   },
@@ -77,7 +78,7 @@ export default function Services() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-300 mb-8"
             >
-              Elevate your brand with our expert embroidery solutions. We bring your designs to life with precision and artistry.
+              Elevate your brand with our expert artwork & embroidery solutions. We bring your designs to life with precision and artistry.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -90,14 +91,15 @@ export default function Services() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-amber-500 text-navy px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-600 transition-colors"
               >
-                Get Started
+                 <Link href='contact'>Get Started</Link>
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-transparent border-2 border-amber-500 text-amber-500 px-8 py-3 rounded-full font-bold text-lg hover:bg-amber-500 hover:text-navy transition-colors"
               >
-                View Portfolio
+                  <Link href='portfolio'>View Portfolio</Link>
+             
               </motion.button>
             </motion.div>
           </div>
@@ -108,7 +110,7 @@ export default function Services() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="absolute bottom-10 left-0 right-0 flex justify-center"
         >
-          <a href="#services" className="text-white flex flex-col items-center group">
+          <a href="services" className="text-white flex flex-col items-center group">
             <span className="mb-2 group-hover:text-amber-500 transition-colors">Explore Our Services</span>
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
@@ -156,8 +158,6 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                onClick={() => setSelectedService(service)}
-                className="cursor-pointer"
               >
                 <AnimatedServiceCard {...service} />
               </motion.div>

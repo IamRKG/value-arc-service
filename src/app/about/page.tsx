@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import AnimatedText from '@/components/AnimatedText'
 import { FaChevronDown, FaDigitalTachograph, FaPaintBrush, FaTshirt, FaCheckCircle } from 'react-icons/fa'
+import Link from 'next/link'
 
 const AboutPage: React.FC = () => {
   const services = [
@@ -71,7 +72,8 @@ const AboutPage: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Our Services
+           
+            <Link href='services'>Explore Our Services</Link>
           </motion.button>
         </div>
         <motion.div 
@@ -106,7 +108,7 @@ const AboutPage: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Our Portfolio
+                 <Link href='portfolio'>Explore Our Portfolio</Link>
               </motion.button>
             </div>
             <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl">

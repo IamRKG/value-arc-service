@@ -5,6 +5,7 @@ import Image from 'next/image';
 import AnimatedText from '@/components/AnimatedText';
 import ResultsShowcase from '@/components/ResultsShowcase';
 import { FaLightbulb, FaChartLine, FaUsers, FaCog, FaChevronDown, FaCheckCircle } from 'react-icons/fa';
+import Link from 'next/link';
 
 const ValueArcPage: React.FC = () => {
   const valueArcSteps = [
@@ -69,7 +70,7 @@ const ValueArcPage: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Explore Value Arc
+            <Link href='services'>Explore Value Arc</Link>
           </motion.button>
         </div>
         <motion.div 
@@ -104,7 +105,8 @@ It&apos;s a representation of how our services evolve and improve, always aiming
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn More
+              
+                <Link href='services'>  Learn More</Link>
               </motion.button>
             </div>
             <div className="relative h-64 md:h-full">

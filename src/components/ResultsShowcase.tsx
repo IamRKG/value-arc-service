@@ -6,9 +6,9 @@ import AnimatedText from './AnimatedText';
 import { FaPencilRuler, FaSmile, FaUsers} from 'react-icons/fa';
 
 const impactData = [
-  { number: 1000, label: 'Designs Digitized', suffix: '+', icon: FaPencilRuler },
-  { number: 98, label: 'Client Satisfaction', suffix: '%', icon: FaSmile },
-  { number: 100, label: 'Happy Customers', suffix: '+', icon: FaUsers },
+  { number: 500, label: 'Designs Digitized', suffix: '+', icon: FaPencilRuler },
+  { number: 99, label: 'Client Satisfaction', suffix: '%', icon: FaSmile },
+  { number: 50, label: 'Happy Customers', suffix: '+', icon: FaUsers },
 ];
 
 const ResultsShowcase: React.FC = () => {

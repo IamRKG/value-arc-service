@@ -36,7 +36,7 @@ export default function Home() {
               imageSrc="/images/embroidery-digitizing.webp"
             />
             <AnimatedServiceCard 
-              title="Custom Artwork Design" 
+              title="Artwork Services" 
               description="Create unique designs tailored for embroidery, from logos to complex illustrations."
               imageSrc="/images/custom-artwork.jpg"
             />
