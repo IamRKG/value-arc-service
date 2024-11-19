@@ -24,14 +24,14 @@ const services = [
     imageSrc: "/images/services/custom-artwork.jpg"
   },
   {
-    title: "Artwork Restoration",
-    description: "Breathe new life into old or damaged designs, preserving their essence while enhancing quality.",
-    imageSrc: "/images/services/artwork-restoration.jpg"
-  },
-  {
     title: "Image Optimization",
     description: "Image optimization reduces file size, enhances quality, and improves website speed and performance.",
     imageSrc: "/images/services/specialty-digitizing.jpg"
+  },
+  {
+    title: "Product Mockups",
+    description: "Breathe new life into old or damaged designs, preserving their essence while enhancing quality.",
+    imageSrc: "/images/services/artwork-restoration.jpg"
   },
   {
     title: "Rush Services",
