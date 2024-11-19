@@ -62,18 +62,25 @@ export default function Footer() {
             <p className="text-sm mb-2">
               <strong>Email:</strong> info@valuearc.com
             </p>
-            <p className="text-sm mb-4">
+            {/* <p className="text-sm mb-4">
               <strong>Phone:</strong> (555) 123-4567
-            </p>
+            </p> */}
             <div className="mt-6 flex space-x-4">
-              {['Facebook', 'Instagram', 'Twitter', 'LinkedIn'].map((social) => (
-                <motion.a
-                  key={social}
-                  href="#"
-                  className="text-gray-300 hover:text-amber-500 transition duration-300"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
+            {['Facebook', 'Instagram','LinkedIn'].map((social) => (
+  <motion.a
+    key={social}
+    href={
+      social === 'Facebook' ? ' https://www.facebook.com/profile.php?id=61569124977257&sk=photos' :
+      social === 'Instagram' ? 'https://www.instagram.com/valuearcdesign91/?hl=en' :
+
+      'https://www.linkedin.com/in/gopala-krishnan-384627150/'
+    }
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-300 hover:text-amber-500 transition duration-300"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+  >
                   <span className="sr-only">{social}</span>
                   {social === 'Facebook' && (
                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

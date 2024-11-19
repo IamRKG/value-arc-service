@@ -83,6 +83,20 @@ const portfolioItems = [
   },
 
   {
+    title: "Logo",
+    category: "Screen Print Namedrop",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_11.jpg",
+    description: "Restored and digitized a vintage company logo for modern use."
+  },
+  {
+    title: "Logo",
+    category: "Screen Print Namedrop",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_12.jpg",
+    description: "Restored and digitized a vintage company logo for modern use."
+  },
+
+
+  {
     title: "3D Puff Design",
     category: "Mockup",
     imageSrc: "/images/portfolio/Value-Arc-Portfolio_5.jpg",
