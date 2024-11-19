@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion'
+
 import { useState } from 'react';
 
 export default function AnimatedContactForm() {
@@ -10,6 +11,7 @@ export default function AnimatedContactForm() {
     email: '',
     message: ''
   });
+  const [formError, setFormError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,8 +34,8 @@ export default function AnimatedContactForm() {
         });
         alert('Message sent successfully!');
       }
-    } catch (error) {
-      alert('Failed to send message. Please try again.');
+    } catch (err) {
+      setFormError(err instanceof Error ? err.message : 'An error occurred')
     }
   };
 
@@ -52,6 +54,11 @@ export default function AnimatedContactForm() {
       transition={{ duration: 0.5, delay: 0.2 }}
       onSubmit={handleSubmit}
     >
+      {formError && (
+        <div className="text-red-500 mb-4">
+          {formError}
+        </div>
+      )}
       <div className="flex flex-wrap -mx-3 mb-6">
         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label className="block uppercase tracking-wide text-navy text-xs font-bold mb-2" htmlFor="grid-firstName">
