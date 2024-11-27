@@ -20,7 +20,9 @@ const services = [
   },
   {
     title: "Artwork Services",
-    description: "Create unique, eye-catching designs tailored to your specific needs and brand identity.",
+    description: `These services include designing, improving
+images, converting to vectors, preparing
+visuals for print, and customizing artwork.`,
     imageSrc: "/images/services/custom-artwork.jpg"
   },
   {

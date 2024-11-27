@@ -67,7 +67,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Transform your designs into stunning embroidery with our professional digitizing and artwork services.
+            Offering professional services for creating and customizing artwork,
+digitizing designs for embroidery, and optimizing images to enhance
+quality and performance for print or digital use.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
