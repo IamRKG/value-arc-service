@@ -1,5 +1,6 @@
 'use client';
-import { FaEnvelope, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaFacebook, FaInstagram} from 'react-icons/fa';
+import { FaSquareXTwitter } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 
 const contactItems = [
@@ -7,7 +8,8 @@ const contactItems = [
   { icon: FaEnvelope, text: 'gopal@valuearcservices.com', href: 'mailto:gopal@valuearcservices.com' },
   { icon: FaEnvelope, text: 'sales@valuearcservices.com', href: 'mailto:sales@valuearcservices.com' },
   { icon: FaLinkedin, text: 'LinkedIn', href: 'https://www.linkedin.com/in/gopala-krishnan-384627150/' },
-  { icon: FaInstagram, text: 'Twitter', href: 'https://www.instagram.com/valuearcdesign91/?hl=en' },
+  { icon: FaInstagram, text: 'Instagram', href: 'https://www.instagram.com/valuearcdesign91/?hl=en' },
+  { icon: FaSquareXTwitter, text: 'X', href: 'https://x.com/value_arc' },
   { icon: FaFacebook, text: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61569124977257&sk=photos' },
 ];
 

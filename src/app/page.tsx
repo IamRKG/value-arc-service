@@ -37,12 +37,16 @@ export default function Home() {
             />
             <AnimatedServiceCard 
               title="Artwork Services" 
-              description="Create unique designs tailored for embroidery, from logos to complex illustrations."
+              description="These services include designing, improving
+images, converting to vectors, preparing
+visuals for print, and customizing artwork."
               imageSrc="/images/custom-artwork.jpg"
             />
             <AnimatedServiceCard 
               title="File Conversion & Optimization" 
-              description="Convert and optimize your existing files for better embroidery results."
+              description="Image optimization reduces file size, enhances
+quality, and improves website speed and
+performance."
               imageSrc="/images/file-conversion.jpg"
             />
           </div>

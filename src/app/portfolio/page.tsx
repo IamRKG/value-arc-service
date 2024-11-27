@@ -26,7 +26,7 @@ const portfolioItems = [
     description: "Original artwork creation for a motorcycle club patch."
   },
   {
-    title: "Corporate Logo",
+    title: "Flat Embroidery",
     category: "Embroidery Digitizing",
     imageSrc: "/images/portfolio/Value-Arc-Portfolio_14.jpg",
     description: "Precision digitizing of a complex corporate logo for uniform embroidery."
@@ -86,6 +86,12 @@ const portfolioItems = [
     title: "Logo",
     category: "Screen Print Namedrop",
     imageSrc: "/images/portfolio/Value-Arc-Portfolio_11.jpg",
+    description: "Restored and digitized a vintage company logo for modern use."
+  },
+  {
+    title: "Logo",
+    category: "Screen Print Namedrop",
+    imageSrc: "/images/portfolio/Value-Arc-Portfolio_13.jpg",
     description: "Restored and digitized a vintage company logo for modern use."
   },
   {
